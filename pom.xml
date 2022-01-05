@@ -60,6 +60,26 @@
             <artifactId>flying-saucer-pdf</artifactId>
             <version>9.1.20</version>
         </dependency>
+        <!-- DEPENDENCY JSOUP -->
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.14.3</version>
+        </dependency>
+
+        <!-- DEPENDENCY ITEXT7 -->
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>itext7-core</artifactId>
+            <version>7.2.0</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>html2pdf</artifactId>
+            <version>4.0.0</version>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>

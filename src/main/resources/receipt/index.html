@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Comprovante-Openbanking</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #E5E5E5;
+      font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+    .logos-verso-principal {
+      height: 32px;
+      width: 140px;
+    }
+    .alg-rgt {
+      text-align: right;
+    }
+    .blue-tx {
+      color: #054375;
+    }
+    .voucher-title {
+      font-weight: 700;
+      size: 30px;
+    }
+    .gray-tx {
+      color: #607D8B;
+      font-weight: 700;
+      size: 16px;
+    }
+    .bord-bt {
+      border-bottom: 1px solid #ECEFF1;
+    }
+    .title-payer {
+      font-weight: 700;
+      color: #37474F;
+    }
+    .card-info {
+      background: #F5F7F8;
+      border: none;
+      font-size: 14px;
+      display: inline;
+    }
+    .light-bg {
+      background: #fff;
+    }
+    .footer-ca {
+      font-size: 14px;
+    }
+    h6 {
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container light-bg" style="width: 433px; min-width: 433px;">
+    <div class="row pt-4">
+      <div class="col-7 pl-4">
+<!--        <img class="logos-verso-principal"-->
+<!--            src="logo-tribanco.svg" alt="logos-verso-principal"/>-->
+      </div>
+      <div class="col-5">
+        Banco Triângulo S/A
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="mt-5 blue-tx">
+          <h2 class="voucher-title">Comprovante de<br/>Envio de Pix</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="mt-3 blue-tx">
+          ID do Pix: {{paymentId}}
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-12">
+        <h3 class="title-payer blue-tx pb-3">Recebedor</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-5">
+        
+          <p class="gray-tx">Valor</p>
+        </div>
+      </div>
+      <div class="col-7 alg-rgt">
+        <p class="alg-rgt">R$ {{amount}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-12 bord-bt"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-5">
+          <p class="gray-tx">Data/hora</p>
+      </div>
+      <div class="col-7 alg-rgt">
+        <p>{{dateTime}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 bord-bt"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+          <p class="gray-tx">Forma de pagamento</p>
+      </div>
+      <div class="col-6 alg-rgt">
+        <p>{{paymentMethod}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 bord-bt"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+          <p class="gray-tx">Descrição</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-10 card card-info">
+        <div class="pt-2 pb-2">
+          {{description}}
+        </div>
+      </div>
+      <div class="col-1"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <h3 class="title-payer blue-tx pt-4 pb-3">Pagador</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-5">
+          <p class="gray-tx">Nome</p>
+      </div>
+      <div class="col-7 alg-rgt">
+        <p>{{payerName}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 bord-bt"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-5">
+          <p class="gray-tx">CPF/CNPJ</p>
+      </div>
+      <div class="col-7 alg-rgt">
+        <p>{{cpfCnpj}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 bord-bt"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-5">
+          <p class="gray-tx">Banco</p>
+      </div>
+      <div class="col-7 alg-rgt">
+        <p>{{bank}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 bord-bt"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-5">
+          <p class="gray-tx">Agência</p>
+      </div>
+      <div class="col-7 alg-rgt">
+        <p>{{issuer}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 bord-bt"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-7">
+          <p class="gray-tx">Conta Corrente</p>
+      </div>
+      <div class="col-5 alg-rgt">
+        <p>{{numberAccount}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 bord-bt"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-5">
+          <p class="gray-tx">Tipo de conta</p>
+      </div>
+      <div class="col-7 alg-rgt">
+        <p>{{accountType}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 bord-bt"></div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-1"></div>
+      <div class="col-10 pb-3 pt-3 card card-info">
+        <div class="footer-ca">
+          Atestamos que a operação acima foi efetuada de acordo com os dados informados pelo cliente.
+          Data atual: <b>{{currentDate}}</b>
+        </div>
+      </div>
+      <div class="col-1"></div>
+    </div>
+
+    <div class="row pb-4">
+      <div class="col-1"></div>
+      <div class="col-10 pb-3 pt-3 mt-4 card card-info">
+        <h6>Central de Atendimento</h6>
+        <div class="footer-ca">
+            Central de Atendimento 3003 3366 – Capitais e regiões metropolitanas. <br/>
+            0800 979 3355 – Demais regiões<br/>
+            0800 727 1247 – SAC 0800 727 4017 – Ouvidoria
+        </div>
+      </div>
+      <div class="col-1"></div>
+    </div>
+</body>
+</html>
